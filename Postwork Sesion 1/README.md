@@ -1,8 +1,8 @@
 #library(dplyr)
 
-1 Cargamos los datos de los partidos de la liga española
-2 Seleccionamos las columnas que contienen los goles 
-3 Probabilidades marginales
+1.Cargamos los datos de los partidos de la liga española\
+2.Seleccionamos las columnas que contienen los goles\
+3.Probabilidades marginales\
 
 ```R
 la.liga <- read.csv("SP12019.csv")
