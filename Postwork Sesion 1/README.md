@@ -12,20 +12,20 @@ Posteriormente elaboramos las tablas de frecuencias relativas para estimar las s
 - La probabilidad (marginal) de que el equipo que juega como visitante anote y goles (y = 0, 1, 2, ...)
 - La probabilidad (conjunta) de que el equipo que juega en casa anote x goles y el equipo que juega como visitante anote y goles (x = 0, 1, 2, ..., y = 0, 1, 2, ...)\
 
-
+Importación de datos
 ```R
 library(dplyr)
 la.liga <- read.csv("SP12019.csv")
 dim(la.liga)
 ```
-Data frames
+Selección de las variables
 ```R
 #Goles hechos en por el equipo en casa
 goles.h <- la.liga$FTHG 
 #Goles hechos en por el equipo que fue de visita
 goles.a <- la.liga$FTAG
 ```
-Tablas de frecuencias
+Tablas de frecuencias maraginales y conjuntas
 ```R
 #Probabilidades marginales de los goles hechos en casa
 prop.table(table(goles.h)) * 100
