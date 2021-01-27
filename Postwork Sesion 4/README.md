@@ -39,8 +39,8 @@ pm.FTAG <- rename(pm.FTAG, FreqA = Freq)
 
 pc.FTG <- as.data.frame(prop.table(table(lspain18_20$FTHG, lspain18_20$FTAG)) * 100)
 ```
-##### 1
-1. Obtenemos una tabla de cocientes al dividir estas probabilidades conjuntas por el producto de las probabilidades marginales correspondientes.
+
+#### 1. Obtenemos una tabla de cocientes al dividir estas probabilidades conjuntas por el producto de las probabilidades marginales correspondientes.
 ```R
 pc.FTG$FreqH <- rep(pm.FTHG$FreqH,7)
 pc.FTG$FreqA <- rep(pm.FTAG$FreqA, each = 9)
@@ -49,8 +49,9 @@ pc.FTG$Cocientes <- pc.FTG$Freq/(100*pc.FTG$FreqH*pc.FTG$FreqA)
 ggplot(pc.FTG, aes(Cocientes)) + 
   geom_histogram()
 ```
-##### 2
-2. Mediante un procedimiento de boostrap, obtén más cocientes similares a los obtenidos en la tabla del punto anterior.
+![PCTABLA](https://user-images.githubusercontent.com/71915068/105949628-9935c000-6032-11eb-9514-06c23793d355.PNG)
+
+#### 2. Mediante un procedimiento de boostrap, obtén más cocientes similares a los obtenidos en la tabla del punto anterior.
 ```R
 #muestra del mismo tamaño con remplazo repitiendo el experimento 1000 veces
 boostrap <- replicate(n = 10000, sample(pc.FTG$Cocientes, replace = T))
