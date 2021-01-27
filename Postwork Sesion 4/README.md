@@ -1,5 +1,7 @@
 # Postwork Sesión 2.
 
+### Solución
+
 #### Objetivo
 
 Investigar la dependencia o independecia de las variables aleatorias X y Y, el número de goles anotados por el equipo de casa y el número de goles anotados por el equipo visitante.
@@ -14,7 +16,7 @@ Investigar la dependencia o independencia del número de goles anotados por el e
 -- Obten una idea de las distribuciones de la cual vienen los cocientes en la tabla anterior. 
 -- Menciona en cuáles casos le parece razonable suponer que los cocientes de la tabla en el punto 1, son iguales a 1 (en tal caso tendríamos independencia de las variables aleatorias X y Y).
 
-#### Solución
+#### Codigo 
 
 Importación de datos y librerias
 ```R
