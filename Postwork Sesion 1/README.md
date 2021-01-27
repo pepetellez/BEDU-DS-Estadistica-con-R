@@ -3,9 +3,6 @@
 
 Con la ayuda de `table` crearemos una tabla de contingencia que es una herramienta utilizada en la rama de la estadística, la cual consiste en crear al menos dos filas y dos columnas para representar datos categóricos en términos de conteos de frecuencia.
 
-Si utilizamos en la termninal`?table` encontramos la siguiente información:
-###### table() returns a contingency table, an object of class "table", an array of integer values. Note that unlike S the result is always an array, a 1D array if one factor is given. 
-
 Importación de datos
 ```R
 library(dplyr)
@@ -37,3 +34,8 @@ prop.table(table(goles.a)) * 100
 prop.table(table(goles.h,goles.a)) * 100
 ```
 ![PConuntas](https://user-images.githubusercontent.com/71915068/105952211-e156e180-6036-11eb-8375-68039b72772c.PNG)
+
+##### Información acerca de table
+
+Si utilizamos en la termninal`?table` encontramos la siguiente información:
+###### table() returns a contingency table, an object of class "table", an array of integer values. Note that unlike S the result is always an array, a 1D array if one factor is given. 
