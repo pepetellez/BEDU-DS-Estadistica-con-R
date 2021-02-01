@@ -48,31 +48,63 @@ pc.FTG$FreqH <- rep(pm.FTHG$FreqH,7)
 pc.FTG$FreqA <- rep(pm.FTAG$FreqA, each = 9)
 pc.FTG$Cocientes <- pc.FTG$Freq/(100*pc.FTG$FreqH*pc.FTG$FreqA)
 
-ggplot(pc.FTG, aes(Cocientes)) + 
-  geom_histogram()
+tabla.cocientes <- acast(pc.FTG, Var1~Var2, value.var="Cocientes")
+tabla.cocientes
 ```
 ![PCTABLA](https://user-images.githubusercontent.com/71915068/105949628-9935c000-6032-11eb-9514-06c23793d355.PNG)
 
 #### 2. Mediante un procedimiento de boostrap, obtén más cocientes similares a los obtenidos en la tabla del punto anterior.
 ```R
 #muestra del mismo tamaño con remplazo repitiendo el experimento 1000 veces
-boostrap <- replicate(n = 10000, sample(pc.FTG$Cocientes, replace = T))
-dim(boostrap)
+all.freq <- matrix(nrow = 1000, ncol = 25)
 
-#Calculamos las medias a cada columna y la almacenamos en medias
-medias<-apply(boostrap, 2, mean)
-medias
 
-#Calculamos la desviación de cada medias con la media muestral para calcular el "error estandar"
-sqrt(sum((medias-xbarra)^2)/ncol(boostrap))
+#Este ciclo obtiene concientes similares antes calculados
+for (rep in 1:1000) {
+  
+  id <- sample(dim(lspain18_20)[1], size = 440, replace = T)
+  head(id)
+  muestra <- lspain18_20[id,]
+  head(muestra)
+  
+  #Con ayuda de la funcion table obtenemos las estimaciones de probabilidades
+  
+  ###Es necesario cargar la funcion_marginales. La creamos ya que nos ayuda a reciclar codigo y nos ahorra un poco de tiempo.
+  estimaciones <- func_marginales(muestra) 
+  
+  iter = 0
+  for (i in 1:5) {
+    for (j in 1:5) {
+      iter = iter+ 1
+      #Se ira llenando por columnas
+      all.freq[rep,iter] <- estimaciones$p.cocientes[i,j]
+    }
+  }
+}
 
-ggplot() + geom_histogram(aes(x=medias),bins=50, color="black", fill="white")+
-  geom_vline(xintercept = mean(medias), linetype="dashed", color = "red", size=1) + 
-  geom_text(aes(label=round(mean(medias),3),y=650,x=mean(medias)),
-            vjust=-1,col='blue',size=4)
+
+#Creamos un vector con los nombres para que aparezcan en los gráficos
+
+all.cocientes<-as.data.frame(all.freq)
+
+(col.f <- rep(0:4,times = 5))
+(row.f <- rep(0:4,each = 5))
+names <- paste(row.f,col.f) #Este vector nos ayudara a identificar cada caso
+
+
+# Gráficamos un histograma con 1000 estimaciones por caso de goles anotados y de visita
+par(mfrow=c(5,5))
+
+l = 0
+for (variable in names) {
+  l = l + 1
+  hist(all.cocientes[,l], main = variable, xlab = "p.conjunta.boostrap")
+}
+
+dev.off()  
 ```
 
-Alternativamente podemos realizar la misma tarea importando `library(boot)` y `boot` para el estadistico de la media
+Alternativamente podemos realizar la misma tarea importando `library(boot)` y `boot` para el remuestrear
 ```R
 library(boot)
 stat_fun <- function(x, idx) mean(x[idx])
