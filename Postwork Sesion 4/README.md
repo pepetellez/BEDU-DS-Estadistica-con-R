@@ -21,6 +21,8 @@ Investigar la dependencia o independencia del número de goles anotados por el e
 Importación de datos y librerias
 ```R
 library(dplyr)
+library(reshape2)
+library(ggplot2)
 lspain18_20<-read.csv("LSPAIN18_20.csv")
 ```
 
@@ -105,6 +107,20 @@ dev.off()
 ```
 #### boostrap (filas = FTHG, columnas = FTAG)
 ![boostrap_probabilidad_conjunta_cocientes](https://user-images.githubusercontent.com/71915068/106407655-3eb9ac80-6402-11eb-82bd-95857f156bab.png)
+
+#### 3. Conclusiones.
+Podemos observar la distribución de cada uno de los casos para goles en casa y visita. Una distribución normal y cerca a uno indica una mayor probabilidad de que ocurra el evento. Tambien notamos que para los casos (0,0) o (1,1) su media es de de uno. Mientras más aumenta la cantida de goles ya sea en casa o de vista la distribución deja de ser normal, aumenta la varianza, deja de estar centrado en 1 y hay poca probabilidad de predicción para estos resultados.
+
+Por otro lado notaremos que en algunos casos la distribución es normal pero no esta centrado y notamos una ligero sesgo a la derecha o a la izquierda, por ejemplo: oberve el caso un gol en casa y cero de visita, quizas esto puede indicar que este evento ocurre con mayor probabilidad de exito ya que esta ligeramente sesgada a la izquierda con un media ligeramente mayor a 1. Por otro lado el caso contrario un gol de visita y cero en casa notamos que la distribución es normal pero este evento indicaria un menor probabilidad de exito ya que la distribución esta ligeramente sesgada a la derecha con una media ligeramente menor a 1. Aqui podemos notar ese contraste y la utilidad de la tecnica boostrap cuando tenemos menor cantidad de datos finita.
+
+
+| H/A  |0   |1   | 2  | 3  |4   |
+|---|---|---|---|---|---|
+|0   |ditribución normal, poca varianza, centrado, predecible   |distribución normal, poca varianza, sesgado a la derecha, predecible|No normal, sesgada a la derecha, poco, predecible, alta varianza|No normal, sesgada a la derecha, poco, predecible, alta varianza|No normal, sesgada a la derecha, poco, predecible, alta varianza|
+|1  |ditribución normal, poca varianza, no centrado, predecible   |ditribución normal, poca varianza, centrado, predecible  | No normal, sesgada a la derecha, poco, predecible, alta varianza |  No normal, sesgada a la derecha, poco, predecible, alta varianza | ... |
+|2  | ditribución normal, poca varianza, no centrado, predecible  |ditribución normal, poca varianza, centrado, predecible | No normal, sesgada a la derecha, poco, predecible, alta varianza  | ...  | ...  |
+|3  | ditribución normal, poca varianza, no centrado, predecible  |ditribución normal, poca varianza, no centrado, predecible|...|...|...|
+|4  |ditribución normal, poca varianza, no centrado, predecible   | ...  | ... | ... | ... |
 
 Alternativamente podemos realizar la misma tarea importando `library(boot)` y `boot` para el remuestrear
 ```R
