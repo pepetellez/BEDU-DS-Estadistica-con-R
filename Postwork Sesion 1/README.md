@@ -7,7 +7,8 @@ Importación de datos
 ```R
 library(dplyr)
 la.liga <- read.csv("SP12019.csv")
-dim(la.liga)
+head(la.liga); tail(la.liga); summary(la.liga); dim(la.liga); 
+
 ```
 Selección de las variables
 ```R
