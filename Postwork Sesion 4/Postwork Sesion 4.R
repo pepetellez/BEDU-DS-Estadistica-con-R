@@ -45,6 +45,8 @@ ggplot(pc.FTG, aes(Cocientes)) +
 #muestra del mismo tamaño con remplazo repitiendo el experimento 1000 veces
 all.freq <- matrix(nrow = 1000, ncol = 25)
 
+
+#Este ciclo obtiene concientes similares antes calculados
 for (rep in 1:1000) {
   
   id <- sample(dim(lspain18_20)[1], size = 440, replace = T)
@@ -52,9 +54,10 @@ for (rep in 1:1000) {
   muestra <- lspain18_20[id,]
   head(muestra)
   
-  #Con ayuda de la funciÃ³n table obtenemos las estimaciones de probabilidades
-  estimaciones <- func_marginales(muestra)
-  estimaciones
+  #Con ayuda de la funcion table obtenemos las estimaciones de probabilidades
+  
+  ###Es necesario cargar la funcion_marginales. La creamos ya que nos ayuda a reciclar codigo y nos ahorra un poco de tiempo.
+  estimaciones <- func_marginales(muestra) 
   
   iter = 0
   for (i in 1:5) {
@@ -67,40 +70,21 @@ for (rep in 1:1000) {
 }
 
 
-all.cocientes<-as.data.frame(all.freq)
+#Gráficamos los resultados
 
-all.cocientes_m <-melt(all.freq)
+all.cocientes<-as.data.frame(all.freq)
 
 (col.f <- rep(0:4,times = 5))
 (row.f <- rep(0:4,each = 5))
-names <- paste(row.f,col.f)
-
-all.cocientes_m$names <- names
-
-ggplot(all.cocientes_m, aes(x = value, group = names)) + 
-  geom_histogram(aes(fill = names)) +  
-  facet_wrap(Var2~., ncol =5, scales = "free")
-  
+names <- paste(row.f,col.f) #Este vector nos ayudara a identificar cada caso
 
 
-id <- sample(dim(lspain18_20)[1], size = 400, replace = T)
-head(id)
-muestra <- lspain18_20[id,]
-head(muestra)
+par(mfrow=c(5,5))
 
-#Con ayuda de la funciÃ³n table obtenemos las estimaciones de probabilidades
-estimaciones <- func_marginales(muestra)
-estimaciones
-
-
-iter = 0
-for (i in 1:6) {
-  for (j in 1:6) {
-    iter = iter+ 1
-     #Se ira llenando por columnas
-    all.freq[2,iter] <- estimaciones$p.cocientes[i,j]
-  }
+l = 0
+for (variable in names) {
+  l = l + 1
+  hist(all.cocientes[,l], main = variable, xlab = "p.conjunta.boostrap")
 }
 
-
-
+dev.off()  
