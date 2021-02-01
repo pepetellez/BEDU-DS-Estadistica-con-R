@@ -7,6 +7,8 @@
 lspain18_20<-read.csv("LSPAIN18_20.csv")
 
 #library(dplyr)
+#library(reshape2)
+#library(ggplot2)
 
 #La probabilidad (marginal) de que el equipo que juega en casa anote x goles (x=0,1,2,)
 pm.FTHG <- as.data.frame(prop.table(table(lspain18_20$FTHG)))
@@ -27,14 +29,10 @@ pc.FTG$FreqH <- rep(pm.FTHG$FreqH,7)
 pc.FTG$FreqA <- rep(pm.FTAG$FreqA, each = 9)
 pc.FTG$Cocientes <- pc.FTG$Freq/(100*pc.FTG$FreqH*pc.FTG$FreqA)
 
-#library(reshape2)
-#library(ggplot2)
 
 tabla.cocientes <- acast(pc.FTG, Var1~Var2, value.var="Cocientes")
 tabla.cocientes
 
-ggplot(pc.FTG, aes(Cocientes)) + 
-  geom_histogram(bins = 30)
 
 #Mediante un procedimiento de boostrap, obtén más cocientes similares a los obtenidos en la tabla del punto 
 #anterior. Esto para tener una idea de las distribuciones de la cual vienen los cocientes en la tabla 
@@ -70,7 +68,7 @@ for (rep in 1:1000) {
 }
 
 
-#Gráficamos los resultados
+#Creamos un vector con los nombres para que aparezcan en los gráficos
 
 all.cocientes<-as.data.frame(all.freq)
 
@@ -79,6 +77,7 @@ all.cocientes<-as.data.frame(all.freq)
 names <- paste(row.f,col.f) #Este vector nos ayudara a identificar cada caso
 
 
+# Gráficamos un histograma con 1000 estimaciones por caso de goles anotados y de visita
 par(mfrow=c(5,5))
 
 l = 0
