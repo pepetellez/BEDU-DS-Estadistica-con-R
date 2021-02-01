@@ -1,8 +1,6 @@
-#library(dplyr)
-
 #1.Cargamos los datos de los partidos de la liga española
 la.liga <- read.csv("SP12019.csv")
-dim(la.liga)
+head(la.liga); tail(la.liga); summary(la.liga); dim(la.liga); 
 
 #2.Seleccionamos las columnas que contienen los goles 
 
