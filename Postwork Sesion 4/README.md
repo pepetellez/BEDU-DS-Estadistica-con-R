@@ -103,6 +103,8 @@ for (variable in names) {
 
 dev.off()  
 ```
+#### boostrap (filas = FTHG, columnas = FTAG)
+![boostrap_probabilidad_conjunta_cocientes](https://user-images.githubusercontent.com/71915068/106407655-3eb9ac80-6402-11eb-82bd-95857f156bab.png)
 
 Alternativamente podemos realizar la misma tarea importando `library(boot)` y `boot` para el remuestrear
 ```R
