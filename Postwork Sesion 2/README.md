@@ -55,7 +55,8 @@ lista[[3]] <- mutate(lista[[3]], Date = as.Date(Date, "%d/%m/%Y"))
 data <- do.call(rbind, lista)
 ```
 #### Resultado
-
+Fragmento del dataframe que dió como resultado el proceso hecho en este postwork.
+![PCTABLA](https://github.com/CristopherCano/BEDU-DS-Estadistica-con-R/blob/master/Postwork%20Sesion%202/Im%C3%A1genes/Resultado.png)
 #### Conslusion
 Habran ocaciones en que los datos que requerimos estarán separados en diferentes archivos con diferente orden en las columnas o formato de fechas, en esta sesión aprendimos cómo unir los dataframes en uno solo dandole un formato común para las fechas y seleccionando solo las columnas requeridas.
 
