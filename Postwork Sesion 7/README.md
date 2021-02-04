@@ -1,4 +1,4 @@
-# Postwork Sesión 7.
+# Postwork Sesión 7
 
 #### Objetivo 
 
