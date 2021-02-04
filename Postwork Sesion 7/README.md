@@ -28,7 +28,15 @@ Realiza una consulta utilizando la sintaxis de **Mongodb**, en la base de datos 
 ```R
 #Goles que metio el R.M. el 20/12/15, contra quien, y el resultado
 m.games$find('{"HomeTeam": "Real Madrid", "Date": "2015-12-20"}')
+
+#      X       Date    HomeTeam    AwayTeam FTHG FTAG FTR
+#1   159 2015-12-20 Real Madrid   Vallecano   10    2   H
+
 ```
+
+| X | Date | HomeTeam | AwayTeam | FTHG | FTAG | FTR |
+| --- | --- || --- | --- || --- | --- || --- |
+| 159 | 2015-12-20 | Real Madrid | Vallecano | 10 | 2 | H |
 
 Por último, no olvides cerrar la conexión con la BDD
 ```R
