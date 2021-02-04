@@ -20,23 +20,21 @@ Una vez hecho esto, realizar un `count` para conocer el número de registros que
 ```R
 #Realizar un count para conocer el numero de registros
 m.games$count()
-
-#[1] 1140
+```
+```R
+[1] 1140
 ```
 
 Realiza una consulta utilizando la sintaxis de **Mongodb**, en la base de datos para conocer el número de goles que metió el Real Madrid el 20 de diciembre de 2015 y contra que equipo jugó, ¿perdió ó fue goleada?
 ```R
 #Goles que metio el R.M. el 20/12/15, contra quien, y el resultado
 m.games$find('{"HomeTeam": "Real Madrid", "Date": "2015-12-20"}')
-
-#      X       Date    HomeTeam    AwayTeam FTHG FTAG FTR
-#1   159 2015-12-20 Real Madrid   Vallecano   10    2   H
-
 ```
 
 | X | Date | HomeTeam | AwayTeam | FTHG | FTAG | FTR |
-| --- | --- || --- | --- || --- | --- || --- |
+| --- | --- | --- | --- | --- | --- | --- |
 | 159 | 2015-12-20 | Real Madrid | Vallecano | 10 | 2 | H |
+
 
 Por último, no olvides cerrar la conexión con la BDD
 ```R
