@@ -4,6 +4,7 @@
 
 - Realizar el alojamiento del fichero de un fichero `.csv` a una base de datos (BDD), en un local host de Mongodb a traves de `R`
 
+
 #### Solución
 
 Alojar el fichero  `data.csv` en una base de datos llamada `match_games`, nombrando al `collection` como `match`
