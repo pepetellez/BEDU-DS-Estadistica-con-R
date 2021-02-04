@@ -46,10 +46,13 @@ summary(lista.final)
 
 La probabilidad (marginal) de que el equipo que juega en casa anote x goles (x=0,1,2,)
 ```R
+#Probabilidad marginal
 tabla1 <- prop.table(table(lista.final$FTHG)) * 100
 
+#Tabla a data.frame
 tabla1 <- as.data.frame(tabla1)
 
+#Gráfica
 p <- ggplot(tabla1, aes(x = Var1 , y = Freq)) + 
   geom_bar (stat="identity", fill = 'blue') +
   xlab("Goles") +
@@ -59,10 +62,13 @@ p
 
 La probabilidad (marginal) de que el equipo que juega como visitante anote y goles (y=0,1,2,)
 ```R
+#Probabilidad marginal
 tabla2 <- prop.table(table(lista.final$FTAG)) * 100
 
+#Tabla a data.frame
 tabla2 <- as.data.frame(tabla2)
 
+#Gráfica
 p <- ggplot(tabla2, aes(x = Var1 , y = Freq)) + 
   geom_bar (stat="identity", fill = 'blue') +
   xlab("Goles") +
@@ -73,12 +79,16 @@ p
 La probabilidad (conjunta) de que el equipo que juega en casa anote x goles y el equipo que juega como visitante anote y goles (x=0,1,2,, y=0,1,2,)
 Por último, no olvides cerrar la conexión con la BDD
 ```R
+#Probabilidad conjunta
 tabla3 <- prop.table(table(lista.final$FTHG, lista.final$FTAG)) * 100
 
+#Tabla a data.frame
 tabla3 <- as.data.frame(tabla3)
 
+#Cambio de nombre de variables
 tabla3 <- rename(tabla3, gol.local = Var1, gol.visita = Var2, Probabilidad = Freq)
 
+#Gráfica
 ggplot(tabla3, aes(x = gol.local, y = gol.visita, fill = Probabilidad)) + 
   geom_tile() +
   scale_fill_gradient(low = "white", high = "steelblue") +
