@@ -9,11 +9,11 @@ principal objetivo realizar tareas de limpieza, manipulación y análisis de bas
 
 ### Contenido
 
- - [Postwork Sesión 1: Introducción a R y Software ](Postwork Sesion 1) 
- - [Postwork Sesión 2: Programación y manipulación de datos en R ](Postwork Sesion 2/) 
- - [Postwork Sesión 3: Análisis Exploratorio de Datos (AED o EDA) con R](Postwork Sesion 3/)
- - [Postwork Sesión 4: Algunas distribuciones, teorema central del límite y contraste de hipótesis](Postwork Sesion 4/) 
- - [Postwork Sesión 5: Regresión lineal y clasificación](Postwork Sesion 5/) 
- - [Postwork Sesión 6: Series de tiempo](Postwork Sesion 6/)
- - [Postwork Sesión 7: RStudio Cloud - Github, conexiones con BDs y lectura de datos externos](Postwork Sesion 7/) 
- - [Postwork Sesión 8: Dashboards con Shiny - Entorno GUI]
+- [Postwork Sesión 1: Introducción a R y Software](https://github.com/CristopherCano/BEDU-DS-Estadistica-con-R/tree/master/Postwork%20Sesion%201)
+- [Postwork Sesión 2: Programación y manipulación de datos en R ](https://github.com/CristopherCano/BEDU-DS-Estadistica-con-R/tree/master/Postwork%20Sesion%202)
+- [Postwork Sesión 3: Análisis Exploratorio de Datos (AED o EDA) con R](https://github.com/CristopherCano/BEDU-DS-Estadistica-con-R/tree/master/Postwork%20Sesion%203)
+- [Postwork Sesión 4: Algunas distribuciones, teorema central del límite y contraste de hipótesis](https://github.com/CristopherCano/BEDU-DS-Estadistica-con-R/tree/master/Postwork%20Sesion%204)
+- [Postwork Sesión 5: Regresión lineal y clasificación](https://github.com/CristopherCano/BEDU-DS-Estadistica-con-R/tree/master/Postwork%20Sesion%205)
+- [Postwork Sesión 6: Series de tiempo](https://github.com/CristopherCano/BEDU-DS-Estadistica-con-R/tree/master/Postwork%20Sesion%206)
+- [Postwork Sesión 7: RStudio Cloud - Github, conexiones con BDs y lectura de datos externos](https://github.com/CristopherCano/BEDU-DS-Estadistica-con-R/tree/master/Postwork%20Sesion%207)
+- [Postwork Sesión 8: Dashboards con Shiny - Entorno GUI]
