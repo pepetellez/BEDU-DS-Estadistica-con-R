@@ -59,6 +59,7 @@ p <- ggplot(tabla1, aes(x = Var1 , y = Freq)) +
   ggtitle('Equipo de casa')
 p
 ```
+![2d0507fe-ee1d-4b27-8a41-ff50ece3b280](https://user-images.githubusercontent.com/72113099/106952900-5beac580-66f7-11eb-9225-36bb4c4f2684.png)
 
 La probabilidad (marginal) de que el equipo que juega como visitante anote y goles (y=0,1,2,)
 ```R
@@ -75,6 +76,8 @@ p <- ggplot(tabla2, aes(x = Var1 , y = Freq)) +
   ggtitle('Equipo de visita')
 p
 ```
+
+![bb459880-6de5-4539-8de8-6d1562acdc89](https://user-images.githubusercontent.com/72113099/106953118-a10ef780-66f7-11eb-85cb-3704966331fe.png)
 
 La probabilidad (conjunta) de que el equipo que juega en casa anote x goles y el equipo que juega como visitante anote y goles (x=0,1,2,, y=0,1,2,)
 Por último, no olvides cerrar la conexión con la BDD
@@ -95,3 +98,5 @@ ggplot(tabla3, aes(x = gol.local, y = gol.visita, fill = Probabilidad)) +
   ggtitle('Probabilidades conjuntas')
 
 ```
+
+![62d47953-de29-4d12-be85-a4a584f20330](https://user-images.githubusercontent.com/72113099/106953131-a3715180-66f7-11eb-92d1-5aaa159f76f9.png)
