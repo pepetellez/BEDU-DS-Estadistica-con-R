@@ -138,3 +138,9 @@ server <- function(input, output) {
 
 shinyApp(ui, server)
 ```
+
+
+
+### Resultado
+
+![2d0507fe-ee1d-4b27-8a41-ff50ece3b280](https://github.com/CristopherCano/BEDU-DS-Estadistica-con-R/blob/master/Postwork%20Sesion%208/www/shiny.PNG?raw=true)
