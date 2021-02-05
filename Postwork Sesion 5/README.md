@@ -1,6 +1,17 @@
-
+# Postwork Sesión 5.
 
 ### Solución
+
+#### Objetivo
+
+Realizar predicciones de una variable cuantitativa con base en variables predictoras, entender como una variable de respuesta está relacionada con una o varias variables explicativas. Realizar clasificaciones con base en variables predictoras también llamadas características.
+
+- Predicción de una variable cuantitativa a partir de otra variable predictora cuando parece razonable asumir una serie de supuestos
+- Predicción de una variable cuantitativa a partir de otras variables predictoras cuando es posible "verificar" algunas suposiciones
+- Clasificación en categorías de un conjunto de objetos o personas
+
+#### Codigo 
+
 1. Importa los datos de soccer de las temporadas 2017/2018, 2018/2019 y 2019/2020 
 ```R
 u1718 <- "https://www.football-data.co.uk/mmz4281/1718/SP1.csv"
