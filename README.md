@@ -16,4 +16,4 @@ principal objetivo realizar tareas de limpieza, manipulación y análisis de bas
 - [Postwork Sesión 5: Regresión lineal y clasificación](https://github.com/CristopherCano/BEDU-DS-Estadistica-con-R/tree/master/Postwork%20Sesion%205)
 - [Postwork Sesión 6: Series de tiempo](https://github.com/CristopherCano/BEDU-DS-Estadistica-con-R/tree/master/Postwork%20Sesion%206)
 - [Postwork Sesión 7: RStudio Cloud - Github, conexiones con BDs y lectura de datos externos](https://github.com/CristopherCano/BEDU-DS-Estadistica-con-R/tree/master/Postwork%20Sesion%207)
-- [Postwork Sesión 8: Dashboards con Shiny - Entorno GUI]
+- [Postwork Sesión 8: Dashboards con Shiny - Entorno GUI](https://github.com/CristopherCano/BEDU-DS-Estadistica-con-R/tree/master/Postwork%20Sesion%208)
