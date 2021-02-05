@@ -1,4 +1,11 @@
+# Postwork Sesión 4.
+
 ### Solución
+
+#### Objetivo
+Realizar la presentación de gráficas, tablas, data tables, imágenes, queries, entre otras aplicaciones de R en dashboards, haciéndolo mediante una visualización atractiva y pudiendo compartir tu información con cualquier actor clave para su manejo.
+
+#### Codigo 
 
 1. Entrada
 ```R
